@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Prediction Game</title>
+<style>
+body { text-align:center; font-family:Arial; background:#111; color:white;}
+button { padding:10px 20px; margin:10px; font-size:18px;}
+.result { font-size:24px; margin-top:20px;}
+</style>
+</head>
+<body>
+
+<h1>🎨 Color Prediction Game</h1>
+
+<button onclick="play('Red')" style="background:red;">Red</button>
+<button onclick="play('Green')" style="background:green;">Green</button>
+<button onclick="play('Blue')" style="background:blue;">Blue</button>
+
+<div class="result" id="result"></div>
+
+<script>
+function play(choice){
+    let colors = ["Red","Green","Blue"];
+    let randomColor = colors[Math.floor(Math.random()*3)];
+    
+    if(choice === randomColor){
+        document.getElementById("result").innerHTML =
+        "🎉 You Win! Color was " + randomColor;
+    } else {
+        document.getElementById("result").innerHTML =
+        "❌ You Lose! Color was " + randomColor;
+    }
+}
+</script>
+
+</body>
+</html>
